@@ -23,7 +23,14 @@ namespace Backend.Models.DataModels
         public string Requirements { get; set; } = string.Empty;
 
         [Required]
-        public Nivel Nivel { get; set; }
+        public Nivel Nivel { get; set; } = Nivel.Básico;
+
+        [Required]
+        public ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
+        [Required]
+        public Chapter Chapter { get; set; } = new Chapter();
+        [Required]
+        public ICollection<Estudiante> Estudiantes { get; set; } = new List<Estudiante>();
     }
     public enum Nivel
     {
